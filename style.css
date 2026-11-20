@@ -434,4 +434,34 @@ header {
     .favorites-preview {
         padding: 25px 18px;
     }
+
+/* =========================================
+   13. ESTILOS PARA FAVORITOS CON JAVASCRIPT
+========================================= */
+
+.favorite-button {
+    cursor: pointer;
+    opacity: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.favorite-button:hover {
+    background-color: #6a340d;
+    transform: translateY(-2px);
+}
+
+#favorite-projects {
+    margin-top: 25px;
+}
+
+#favorite-projects:empty {
+    display: none;
+}
+
+#empty-message {
+    color: #888;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
 }
