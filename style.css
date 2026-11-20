@@ -1,6 +1,6 @@
 
 /* =========================================
-   1. ESTILOS GENERALES
+   1. ESTILOS GENERALES ORIGINALES
 ========================================= */
 
 * {
@@ -11,7 +11,7 @@
 }
 
 body {
-    background-color: #f7f6f3;
+    background-color: #f4f4f4;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ body {
 
 
 /* =========================================
-   2. ENCABEZADO Y NAVEGACIÓN
+   2. ENCABEZADO ORIGINAL
 ========================================= */
 
 header {
@@ -28,14 +28,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 17px 40px;
-    border-bottom: 1px solid #e8e3dd;
+    padding: 15px 40px;
+    border-bottom: 2px solid #e0e0e0;
 }
 
 .autores {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
 }
 
 .tag-autor {
@@ -43,7 +42,7 @@ header {
     color: white;
     padding: 8px 18px;
     border-radius: 20px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -51,28 +50,27 @@ header {
     font-size: 32px;
     font-weight: bold;
     color: #2c2c2c;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .boton-inicio {
     background-color: #8B4513;
     color: white;
     text-decoration: none;
-    padding: 9px 25px;
+    padding: 8px 25px;
     border-radius: 20px;
     font-size: 14px;
     font-weight: 500;
-    transition: 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 .boton-inicio:hover {
     background-color: #6a340d;
-    transform: translateY(-2px);
 }
 
 
 /* =========================================
-   3. BANNER PRINCIPAL
+   3. BANNER ORIGINAL
 ========================================= */
 
 .banner-gris {
@@ -83,39 +81,38 @@ header {
 
 
 /* =========================================
-   4. CONTENIDO PRINCIPAL
+   4. CONTENIDO PRINCIPAL ORIGINAL
 ========================================= */
 
 .contenedor-inicio {
     max-width: 1100px;
-    width: 100%;
     margin: 0 auto;
-    padding: 48px 20px;
+    padding: 40px 20px;
     text-align: center;
 }
 
 .titulo-principal {
     color: #8B4513;
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 14px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
 .subtitulo-principal {
-    color: #666;
+    color: #555;
     font-size: 16px;
-    margin-bottom: 42px;
-    line-height: 1.7;
+    margin-bottom: 40px;
+    line-height: 1.5;
 }
 
 
 /* =========================================
-   5. TARJETAS ORIGINALES
+   5. CUADRÍCULA ORIGINAL
 ========================================= */
 
 .grid-tarjetas {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
     justify-content: center;
 }
@@ -125,66 +122,54 @@ header {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    transition: transform 0.3s ease;
-}
-
-.tarjeta:hover {
-    transform: translateY(-5px);
 }
 
 .tarjeta img {
     width: 100%;
-    height: 185px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.10);
-    transition: 0.3s ease;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
 }
 
-.tarjeta:hover img {
-    box-shadow: 0 9px 20px rgba(0,0,0,0.16);
+.tarjeta img:hover {
+    transform: scale(1.02);
 }
 
 .boton-tarjeta {
     background-color: #8B4513;
     color: white;
     width: 100%;
-    padding: 12px 0;
-    margin-top: 14px;
-    border-radius: 22px;
+    padding: 10px 0;
+    margin-top: 15px;
+    border-radius: 20px;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.tarjeta:hover .boton-tarjeta {
-    background-color: #6a340d;
 }
 
 
 /* =========================================
-   6. PÁGINAS DE DETALLE
+   6. PÁGINAS DE DETALLE ORIGINALES
 ========================================= */
 
 .contenedor-detalle {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 35px 20px;
+    padding: 30px 20px;
 }
 
 .encabezado-detalle {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 .textos-encabezado h1 {
     color: #8B4513;
     font-size: 28px;
-    margin-bottom: 8px;
 }
 
 .textos-encabezado p {
@@ -196,53 +181,47 @@ header {
 .galeria-miniaturas {
     display: flex;
     gap: 15px;
-    flex-wrap: wrap;
 }
 
 .galeria-miniaturas img {
     width: 160px;
     height: 110px;
     object-fit: cover;
-    border-radius: 7px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+    border-radius: 4px;
 }
 
 .seccion-texto {
-    background-color: #ffffff;
-    padding: 22px;
-    margin-bottom: 22px;
-    border-radius: 8px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
-    line-height: 1.7;
+    margin-bottom: 25px;
+    line-height: 1.6;
 }
 
 .seccion-texto h2 {
     color: #8B4513;
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .seccion-texto p,
 .seccion-texto ul {
-    color: #444;
+    color: #333;
     font-size: 15px;
 }
 
 .seccion-texto ul {
     list-style-position: inside;
-    margin-top: 8px;
+    margin-top: 5px;
 }
 
 
 /* =========================================
-   7. ARCHITECTURE PROJECTS
+   7. NUEVA SECCIÓN: ARCHITECTURE PROJECTS
 ========================================= */
 
 .projects-section {
     max-width: 1100px;
     width: 100%;
-    margin: 10px auto 0;
-    padding: 45px 20px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 .projects-header {
@@ -253,12 +232,12 @@ header {
 .projects-header h2 {
     color: #8B4513;
     font-size: 30px;
-    font-weight: 700;
+    font-weight: bold;
     margin-bottom: 12px;
 }
 
 .projects-header p {
-    color: #666;
+    color: #555;
     font-size: 15px;
     line-height: 1.7;
     max-width: 650px;
@@ -267,7 +246,7 @@ header {
 
 
 /* =========================================
-   8. GALERÍA DE PROYECTOS
+   8. TARJETAS DE PROYECTOS
 ========================================= */
 
 .projects-grid {
@@ -280,19 +259,19 @@ header {
     background-color: #ffffff;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.13);
 }
 
 .project-card img {
     display: block;
     width: 100%;
-    height: 260px;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -307,7 +286,7 @@ header {
 }
 
 .project-info p {
-    color: #666;
+    color: #555;
     font-size: 14px;
     line-height: 1.7;
     margin-bottom: 18px;
@@ -315,7 +294,7 @@ header {
 
 
 /* =========================================
-   9. BOTONES DE FAVORITOS
+   9. BOTONES SAVE PROJECT
 ========================================= */
 
 .favorite-button {
@@ -327,7 +306,7 @@ header {
     font-size: 13px;
     font-weight: 500;
     cursor: not-allowed;
-    opacity: 0.75;
+    opacity: 0.8;
 }
 
 
@@ -341,7 +320,7 @@ header {
     padding: 35px 25px;
     border-radius: 10px;
     text-align: center;
-    border: 1px solid #e8e3dd;
+    border: 1px solid #e0e0e0;
     box-shadow: 0 4px 14px rgba(0,0,0,0.04);
 }
 
@@ -352,7 +331,7 @@ header {
 }
 
 .favorites-preview p {
-    color: #666;
+    color: #555;
     font-size: 15px;
     line-height: 1.7;
     max-width: 650px;
@@ -377,32 +356,28 @@ header {
 
 .projects-footer {
     background-color: #ffffff;
-    border-top: 1px solid #e8e3dd;
+    border-top: 1px solid #e0e0e0;
     text-align: center;
-    padding: 24px 15px;
+    padding: 22px 15px;
     margin-top: 20px;
-    color: #777;
+    color: #666;
     font-size: 13px;
     line-height: 1.8;
 }
 
 
 /* =========================================
-   12. DISEÑO RESPONSIVE
+   12. ADAPTACIÓN PARA CELULARES
 ========================================= */
 
 @media (max-width: 850px) {
-
-    .grid-tarjetas {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .project-card img {
-        height: 220px;
+        height: 210px;
     }
 }
 
@@ -410,50 +385,34 @@ header {
 
     header {
         padding: 15px;
-        flex-direction: column;
-        gap: 15px;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
     .logo-titulo {
         font-size: 27px;
-        order: -1;
     }
 
     .autores {
-        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .banner-gris {
-        height: 80px;
-    }
-
-    .contenedor-inicio {
-        padding: 35px 18px;
-    }
-
-    .titulo-principal {
-        font-size: 24px;
-    }
-
-    .subtitulo-principal {
-        font-size: 14px;
+        height: 90px;
     }
 
     .grid-tarjetas {
         grid-template-columns: 1fr;
-        gap: 25px;
     }
 
-    .tarjeta img {
-        height: 210px;
+    .encabezado-detalle {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
 
-    .projects-section {
-        padding: 35px 18px;
-    }
-
-    .projects-header h2 {
-        font-size: 25px;
+    .galeria-miniaturas {
+        flex-wrap: wrap;
     }
 
     .projects-grid {
@@ -464,12 +423,15 @@ header {
         height: 230px;
     }
 
-    .encabezado-detalle {
-        flex-direction: column;
-        align-items: flex-start;
+    .projects-section {
+        padding: 30px 18px;
     }
 
-    .galeria-miniaturas img {
-        width: calc(50% - 8px);
+    .projects-header h2 {
+        font-size: 26px;
+    }
+
+    .favorites-preview {
+        padding: 25px 18px;
     }
 }
