@@ -70,30 +70,35 @@
 
 
     <!-- ================================= -->
-    <!-- NUEVA SECCIÓN: ARCHITECTURE PROJECTS -->
+    <!-- ARCHITECTURE PROJECTS -->
     <!-- ================================= -->
 
     <section class="projects-section">
 
         <div class="projects-header">
+
             <h2>Architecture Projects</h2>
 
             <p>
                 Discover inspiring architectural designs, explore different styles
                 and find ideas for your next project.
             </p>
+
         </div>
+
 
         <!-- GALERÍA DE PROYECTOS -->
         <div class="projects-grid">
 
             <!-- PROYECTO 1 -->
-            <div class="project-card">
+            <div class="project-card" data-project-id="modern-house">
 
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+                <img
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
                     alt="Modern House">
 
                 <div class="project-info">
+
                     <h3>Modern House</h3>
 
                     <p>
@@ -101,20 +106,24 @@
                         simplicity, natural light and open spaces.
                     </p>
 
-                    <button class="favorite-button" type="button" disabled>
+                    <button class="favorite-button" type="button"
+                        data-project="modern-house">
                         ♡ Save Project
                     </button>
-                </div>
 
+                </div>
             </div>
 
-            <!-- PROYECTO 2 -->
-            <div class="project-card">
 
-                <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80"
+            <!-- PROYECTO 2 -->
+            <div class="project-card" data-project-id="modern-museum">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80"
                     alt="Modern Museum">
 
                 <div class="project-info">
+
                     <h3>Modern Museum</h3>
 
                     <p>
@@ -122,20 +131,24 @@
                         expression and innovative structures.
                     </p>
 
-                    <button class="favorite-button" type="button" disabled>
+                    <button class="favorite-button" type="button"
+                        data-project="modern-museum">
                         ♡ Save Project
                     </button>
-                </div>
 
+                </div>
             </div>
 
-            <!-- PROYECTO 3 -->
-            <div class="project-card">
 
-                <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80"
+            <!-- PROYECTO 3 -->
+            <div class="project-card" data-project-id="sustainable-building">
+
+                <img
+                    src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80"
                     alt="Sustainable Building">
 
                 <div class="project-info">
+
                     <h3>Sustainable Building</h3>
 
                     <p>
@@ -143,20 +156,24 @@
                         integrates nature and modern construction.
                     </p>
 
-                    <button class="favorite-button" type="button" disabled>
+                    <button class="favorite-button" type="button"
+                        data-project="sustainable-building">
                         ♡ Save Project
                     </button>
-                </div>
 
+                </div>
             </div>
 
-            <!-- PROYECTO 4 -->
-            <div class="project-card">
 
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+            <!-- PROYECTO 4 -->
+            <div class="project-card" data-project-id="residential-design">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
                     alt="Residential Design">
 
                 <div class="project-info">
+
                     <h3>Residential Design</h3>
 
                     <p>
@@ -164,29 +181,36 @@
                         functionality, comfort and contemporary style.
                     </p>
 
-                    <button class="favorite-button" type="button" disabled>
+                    <button class="favorite-button" type="button"
+                        data-project="residential-design">
                         ♡ Save Project
                     </button>
-                </div>
 
+                </div>
             </div>
 
         </div>
 
 
+        <!-- ================================= -->
         <!-- MY FAVORITE PROJECTS -->
+        <!-- ================================= -->
+
         <div class="favorites-preview">
 
             <h2>My Favorite Projects</h2>
 
             <p>
-                This section will allow visitors to save their favorite
-                architecture projects and find them easily in the future.
+                Your saved architecture projects will appear here.
             </p>
 
-            <span class="development-label">
-                Función en desarrollo
-            </span>
+            <!-- AQUÍ APARECERÁN LOS FAVORITOS -->
+            <div id="favorite-projects" class="projects-grid"></div>
+
+            <!-- MENSAJE CUANDO NO HAY FAVORITOS -->
+            <p id="empty-message">
+                You haven't saved any projects yet.
+            </p>
 
         </div>
 
@@ -195,9 +219,139 @@
 
     <!-- PIE DE PÁGINA -->
     <footer class="projects-footer">
+
         <p>ARTquitect | Architecture and Design</p>
+
         <p>Created by Andrew Bell and Oliver Carrasco</p>
+
     </footer>
+
+
+    <!-- ================================= -->
+    <!-- JAVASCRIPT: SISTEMA DE FAVORITOS -->
+    <!-- ================================= -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const buttons = document.querySelectorAll(".favorite-button");
+
+            const favoritesContainer = document.getElementById("favorite-projects");
+
+            const emptyMessage = document.getElementById("empty-message");
+
+            // Recuperar favoritos guardados
+            let favorites = JSON.parse(
+                localStorage.getItem("artquitect-favorites")
+            ) || [];
+
+
+            // ACTUALIZAR LA SECCIÓN DE FAVORITOS
+            function updateFavorites() {
+
+                favoritesContainer.innerHTML = "";
+
+                // Actualizar el texto de los botones
+                buttons.forEach(button => {
+
+                    const id = button.dataset.project;
+
+                    if (favorites.includes(id)) {
+
+                        button.textContent = "♥ Saved";
+
+                    } else {
+
+                        button.textContent = "♡ Save Project";
+
+                    }
+
+                });
+
+
+                // Mostrar los proyectos guardados
+                favorites.forEach(id => {
+
+                    const originalCard = document.querySelector(
+                        `[data-project-id="${id}"]`
+                    );
+
+                    if (!originalCard) return;
+
+                    const favoriteCard = originalCard.cloneNode(true);
+
+                    // Quitar el botón de guardar de la copia
+                    const favoriteButton = favoriteCard.querySelector(
+                        ".favorite-button"
+                    );
+
+                    if (favoriteButton) {
+                        favoriteButton.remove();
+                    }
+
+                    favoritesContainer.appendChild(favoriteCard);
+
+                });
+
+
+                // Mostrar u ocultar el mensaje vacío
+                if (favorites.length === 0) {
+
+                    emptyMessage.style.display = "block";
+
+                } else {
+
+                    emptyMessage.style.display = "none";
+
+                }
+
+            }
+
+
+            // ACTIVAR LOS BOTONES
+            buttons.forEach(button => {
+
+                button.addEventListener("click", function () {
+
+                    const id = this.dataset.project;
+
+                    // Si ya está guardado, quitarlo
+                    if (favorites.includes(id)) {
+
+                        favorites = favorites.filter(
+                            item => item !== id
+                        );
+
+                    } else {
+
+                        // Si no está guardado, agregarlo
+                        favorites.push(id);
+
+                    }
+
+
+                    // Guardar en el navegador
+                    localStorage.setItem(
+                        "artquitect-favorites",
+                        JSON.stringify(favorites)
+                    );
+
+
+                    // Actualizar la página
+                    updateFavorites();
+
+                });
+
+            });
+
+
+            // Mostrar favoritos al abrir la página
+            updateFavorites();
+
+        });
+
+    </script>
 
 </body>
 </html>
