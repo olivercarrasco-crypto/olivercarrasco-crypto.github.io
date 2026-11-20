@@ -1,189 +1,150 @@
-/* Estilos Generales */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
-body {
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+/* ===================================== */
+/* NUEVA SECCIÓN: ARCHITECTURE PROJECTS */
+/* ===================================== */
 
-/* Encabezado y Navegación Superior */
-header {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    border-bottom: 2px solid #e0e0e0;
-}
-
-.autores {
-    display: flex;
-    gap: 10px;
-}
-
-.tag-autor {
-    background-color: #8B4513;
-    color: white;
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.logo-titulo {
-    font-size: 32px;
-    font-weight: bold;
-    color: #2c2c2c;
-    letter-spacing: 1px;
-}
-
-.boton-inicio {
-    background-color: #8B4513;
-    color: white;
-    text-decoration: none;
-    padding: 8px 25px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-.boton-inicio:hover {
-    background-color: #6a340d;
-}
-
-/* Franja Banner Gris */
-.banner-gris {
-    background-color: #cdd5df;
-    height: 120px;
-    width: 100%;
-}
-
-/* Contenido Principal - Inicio */
-.contenedor-inicio {
+.projects-section {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 35px 20px;
     text-align: center;
 }
 
-.titulo-principal {
+.projects-header h2 {
     color: #8B4513;
     font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
-.subtitulo-principal {
+.projects-header p {
     color: #555;
     font-size: 16px;
-    margin-bottom: 40px;
-    line-height: 1.5;
-}
-
-/* Cuadrícula de Pestañas/Tarjetas */
-.grid-tarjetas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    justify-content: center;
-}
-
-.tarjeta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-}
-
-.tarjeta img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-}
-
-.tarjeta img:hover {
-    transform: scale(1.02);
-}
-
-.boton-tarjeta {
-    background-color: #8B4513;
-    color: white;
-    width: 100%;
-    padding: 10px 0;
-    margin-top: 15px;
-    border-radius: 20px;
-    font-weight: 500;
-    font-size: 16px;
-    text-align: center;
-}
-
-/* Estilos para Páginas de Detalle */
-.contenedor-detalle {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px 20px;
-}
-
-.encabezado-detalle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 30px;
 }
 
-.textos-encabezado h1 {
-    color: #8B4513;
-    font-size: 28px;
+/* Cuadrícula de proyectos */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
-.textos-encabezado p {
-    color: #666;
-    font-size: 18px;
-    font-style: italic;
+.project-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
 }
 
-.galeria-miniaturas {
-    display: flex;
-    gap: 15px;
-}
-
-.galeria-miniaturas img {
-    width: 160px;
-    height: 110px;
+.project-card img {
+    width: 100%;
+    height: 220px;
     object-fit: cover;
-    border-radius: 4px;
 }
 
-.seccion-texto {
-    margin-bottom: 25px;
-    line-height: 1.6;
+.project-info {
+    padding: 18px;
 }
 
-.seccion-texto h2 {
+.project-info h3 {
     color: #8B4513;
     font-size: 20px;
     margin-bottom: 8px;
 }
 
-.seccion-texto p, .seccion-texto ul {
-    color: #333;
-    font-size: 15px;
+.project-info p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
 
-.seccion-texto ul {
-    list-style-position: inside;
-    margin-top: 5px;
+/* Botón de favoritos: solo vista previa */
+
+.favorite-button {
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+/* Vista previa de My Favorite Projects */
+
+.favorites-preview {
+    background-color: white;
+    margin-top: 40px;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.favorites-preview h2 {
+    color: #8B4513;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.favorites-preview p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.development-label {
+    display: inline-block;
+    background-color: #cdd5df;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Pie de página */
+
+.projects-footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Adaptación para celulares */
+
+@media (max-width: 650px) {
+    header {
+        padding: 15px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .logo-titulo {
+        font-size: 25px;
+    }
+
+    .autores {
+        flex-wrap: wrap;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-miniaturas {
+        flex-wrap: wrap;
+    }
+
+    .encabezado-detalle {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
 }
 
